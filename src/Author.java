@@ -7,13 +7,31 @@ public class Author {
         this.name = name;
         this.surname = surname;
     }
-    public String getName() {
-        return this.name;
+    public String getName() {return this.name;}
+
+    public String getSurname() {return this.surname;}
+
+    @Override
+    public boolean equals(Object obj) {
+        Author ob = (Author) obj;
+        if (this == obj)return true;
+        else if (this.name == ob.getName() && (this.surname == ob.getSurname()))
+            return true;
+        else
+            return false;
     }
 
-    public String getSurname() {
-        return this.surname;
+    @Override
+    public int hashCode(){
+        return this.name.hashCode() + this.surname.hashCode();
     }
+
+    @Override
+    public String toString (){
+        return "Author name: " + this.name + " Author surname: " + this.surname;
+    }
+
+
 
 
 }

@@ -2,17 +2,28 @@ public class Main {
     public static void main(String[] args) {
 
         Author author1 = new Author ("Leo", "Tolstoy");
-        Author author2 = new Author ("John", "Smith");
+        System.out.println(author1);
+        System.out.println(author1.hashCode());
 
-        Book book1 = new Book("War and peace", author1,2022);
+        System.out.println("------");
+        Author author2 = new Author ("Leo", "Tolstoy");
+        System.out.println(author2);
+        System.out.println(author2.hashCode());
 
-        System.out.println("Name of the book is " + book1.getBookName() + ", author's name is " + book1.getAuthor().getName() + " " + book1.getAuthor().getSurname() + ", " + "publishing year is " + book1.getPublishingYear());
-        book1.setPublishingYear(2000);
+        System.out.println(author1.equals(author2));
 
-        System.out.println("Name of the book is " + book1.getBookName() + ", author's name is " + book1.getAuthor().getName() + " " + book1.getAuthor().getSurname() + ", " + "publishing year is " + book1.getPublishingYear());
+        Book book1 = new Book("War and Peace", author1, 2022);
 
+        System.out.println("------");
+        System.out.println(book1);
+        System.out.println(book1.hashCode());
 
+        Book book2 = new Book("War and Peace", author1, 2022);
 
+        System.out.println("------");
+        System.out.println(book2);
+        System.out.println(book2.hashCode());
+        System.out.println(book1.equals(book2));
 
     }
 }
